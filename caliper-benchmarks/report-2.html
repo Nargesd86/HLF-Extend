@@ -126,18 +126,20 @@
             <ul>
                 <h3>&nbspBasic information</h3>
                 <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
-                <li>Name: &nbsp<span style="font-weight: 500;"></span></li>
-                <li>Description: &nbsp<span style="font-weight: 500;"></span></li>
-                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">4</span></li>
+                <li>Name: &nbsp<span style="font-weight: 500;">IoT Latency vs Throughput</span></li>
+                <li>Description: &nbsp<span style="font-weight: 500;">Evaluate latency vs throughput to identify system limits</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">6</span></li>
                 <li><a href="#benchmarkInfo">Details</a></li>
             </ul>
             <ul>
                 <h3>&nbspBenchmark results</h3>
                 <li><a href="#benchmarksummary">Summary</a></li>
-                    <li><a href="#Create a car.">Create a car.</a></li>
-                    <li><a href="#Change car owner.">Change car owner.</a></li>
-                    <li><a href="#Query all cars.">Query all cars.</a></li>
-                    <li><a href="#Query a car.">Query a car.</a></li>
+                    <li><a href="#Load-1TPS">Load-1TPS</a></li>
+                    <li><a href="#Load-5TPS">Load-5TPS</a></li>
+                    <li><a href="#Load-10TPS">Load-10TPS</a></li>
+                    <li><a href="#Load-20TPS">Load-20TPS</a></li>
+                    <li><a href="#Load-40TPS">Load-40TPS</a></li>
+                    <li><a href="#Load-60TPS">Load-60TPS</a></li>
             </ul>
             <ul>
                 <h3>&nbspSystem under test</h3>
@@ -155,148 +157,201 @@
                     </tr>
 
                     <tr>
-                         <td>Create a car.</td> <td>5000</td> <td>0</td> <td>52.3</td> <td>1.11</td> <td>0.02</td> <td>0.10</td> <td>52.3</td>
+                         <td>Load-1TPS</td> <td>30</td> <td>0</td> <td>1.2</td> <td>2.12</td> <td>2.02</td> <td>2.05</td> <td>1.1</td>
                     </tr>
                     <tr>
-                         <td>Change car owner.</td> <td>1303</td> <td>0</td> <td>44.8</td> <td>2.07</td> <td>0.03</td> <td>0.14</td> <td>41.8</td>
+                         <td>Load-5TPS</td> <td>100</td> <td>0</td> <td>5.3</td> <td>1.09</td> <td>0.03</td> <td>0.55</td> <td>5.2</td>
                     </tr>
                     <tr>
-                         <td>Query all cars.</td> <td>15186</td> <td>0</td> <td>523.1</td> <td>0.09</td> <td>0.00</td> <td>0.01</td> <td>523.0</td>
+                         <td>Load-10TPS</td> <td>200</td> <td>0</td> <td>10.2</td> <td>0.61</td> <td>0.02</td> <td>0.32</td> <td>10.2</td>
                     </tr>
                     <tr>
-                         <td>Query a car.</td> <td>20250</td> <td>0</td> <td>696.9</td> <td>0.05</td> <td>0.00</td> <td>0.01</td> <td>696.8</td>
+                         <td>Load-20TPS</td> <td>400</td> <td>0</td> <td>20.2</td> <td>0.33</td> <td>0.02</td> <td>0.17</td> <td>20.2</td>
+                    </tr>
+                    <tr>
+                         <td>Load-40TPS</td> <td>800</td> <td>0</td> <td>40.1</td> <td>0.26</td> <td>0.02</td> <td>0.14</td> <td>40.0</td>
+                    </tr>
+                    <tr>
+                         <td>Load-60TPS</td> <td>1200</td> <td>0</td> <td>60.1</td> <td>0.20</td> <td>0.02</td> <td>0.09</td> <td>59.9</td>
                     </tr>
                 </table>
             </div>
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Create a car.">
-                <h2>Benchmark round: Create a car.</h2>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Load-1TPS">
+                <h2>Benchmark round: Load-1TPS</h2>
                 <p></p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
-  type: fixed-load
+  type: fixed-rate
   opts:
-    transactionLoad: 5
+    tps: 1
 </pre>
-                        <h3>Performance metrics for Create a car.</h3>
+                        <h3>Performance metrics for Load-1TPS</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Create a car.</td> <td>5000</td> <td>0</td> <td>52.3</td> <td>1.11</td> <td>0.02</td> <td>0.10</td> <td>52.3</td>
+                                     <td>Load-1TPS</td> <td>30</td> <td>0</td> <td>1.2</td> <td>2.12</td> <td>2.02</td> <td>2.05</td> <td>1.1</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for Create a car.</h3>
+                        <h3>Resource utilization for Load-1TPS</h3>
             </div>
 
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Change car owner.">
-                <h2>Benchmark round: Change car owner.</h2>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Load-5TPS">
+                <h2>Benchmark round: Load-5TPS</h2>
                 <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
-rateControl:
-  type: fixed-load
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
   opts:
-    transactionLoad: 5
+    tps: 5
 </pre>
-                        <h3>Performance metrics for Change car owner.</h3>
+                        <h3>Performance metrics for Load-5TPS</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Change car owner.</td> <td>1303</td> <td>0</td> <td>44.8</td> <td>2.07</td> <td>0.03</td> <td>0.14</td> <td>41.8</td>
+                                     <td>Load-5TPS</td> <td>100</td> <td>0</td> <td>5.3</td> <td>1.09</td> <td>0.03</td> <td>0.55</td> <td>5.2</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for Change car owner.</h3>
+                        <h3>Resource utilization for Load-5TPS</h3>
             </div>
 
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query all cars.">
-                <h2>Benchmark round: Query all cars.</h2>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Load-10TPS">
+                <h2>Benchmark round: Load-10TPS</h2>
                 <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
-rateControl:
-  type: fixed-load
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
   opts:
-    transactionLoad: 5
+    tps: 10
 </pre>
-                        <h3>Performance metrics for Query all cars.</h3>
+                        <h3>Performance metrics for Load-10TPS</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Query all cars.</td> <td>15186</td> <td>0</td> <td>523.1</td> <td>0.09</td> <td>0.00</td> <td>0.01</td> <td>523.0</td>
+                                     <td>Load-10TPS</td> <td>200</td> <td>0</td> <td>10.2</td> <td>0.61</td> <td>0.02</td> <td>0.32</td> <td>10.2</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for Query all cars.</h3>
+                        <h3>Resource utilization for Load-10TPS</h3>
             </div>
 
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Query a car.">
-                <h2>Benchmark round: Query a car.</h2>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Load-20TPS">
+                <h2>Benchmark round: Load-20TPS</h2>
                 <p></p>
-                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
-rateControl:
-  type: fixed-load
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
   opts:
-    transactionLoad: 5
+    tps: 20
 </pre>
-                        <h3>Performance metrics for Query a car.</h3>
+                        <h3>Performance metrics for Load-20TPS</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>Query a car.</td> <td>20250</td> <td>0</td> <td>696.9</td> <td>0.05</td> <td>0.00</td> <td>0.01</td> <td>696.8</td>
+                                     <td>Load-20TPS</td> <td>400</td> <td>0</td> <td>20.2</td> <td>0.33</td> <td>0.02</td> <td>0.17</td> <td>20.2</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for Query a car.</h3>
+                        <h3>Resource utilization for Load-20TPS</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Load-40TPS">
+                <h2>Benchmark round: Load-40TPS</h2>
+                <p></p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 40
+</pre>
+                        <h3>Performance metrics for Load-40TPS</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Load-40TPS</td> <td>800</td> <td>0</td> <td>40.1</td> <td>0.26</td> <td>0.02</td> <td>0.14</td> <td>40.0</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Load-40TPS</h3>
+            </div>
+
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Load-60TPS">
+                <h2>Benchmark round: Load-60TPS</h2>
+                <p></p>
+                <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">rateControl:
+  type: fixed-rate
+  opts:
+    tps: 60
+</pre>
+                        <h3>Performance metrics for Load-60TPS</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Load-60TPS</td> <td>1200</td> <td>0</td> <td>60.1</td> <td>0.20</td> <td>0.02</td> <td>0.09</td> <td>59.9</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Load-60TPS</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
                 <h2>Test Environment</h2>
                 <h3>benchmark config</h3>
-                <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">workers:
+                <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: IoT Latency vs Throughput
+description: Evaluate latency vs throughput to identify system limits
+workers:
   number: 5
 rounds:
-  - label: Create a car.
-    txNumber: 5000
+  - label: Load-1TPS
+    txNumber: 30
     rateControl:
-      type: fixed-load
+      type: fixed-rate
       opts:
-        transactionLoad: 5
+        tps: 1
     workload:
       module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;createCar.js
-  - label: Change car owner.
-    txDuration: 30
+  - label: Load-5TPS
+    txNumber: 100
     rateControl:
-      type: fixed-load
+      type: fixed-rate
       opts:
-        transactionLoad: 5
+        tps: 5
     workload:
-      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;changeCarOwner.js
-      arguments:
-        assets: 500
-  - label: Query all cars.
-    txDuration: 30
+      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;createCar.js
+  - label: Load-10TPS
+    txNumber: 200
     rateControl:
-      type: fixed-load
+      type: fixed-rate
       opts:
-        transactionLoad: 5
+        tps: 10
     workload:
-      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;queryAllCars.js
-      arguments:
-        assets: 500
-        startKey: &#39;1&#39;
-        endKey: &#39;50&#39;
-  - label: Query a car.
-    txDuration: 30
+      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;createCar.js
+  - label: Load-20TPS
+    txNumber: 400
     rateControl:
-      type: fixed-load
+      type: fixed-rate
       opts:
-        transactionLoad: 5
+        tps: 20
     workload:
-      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;queryCar.js
-      arguments:
-        assets: 500
+      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;createCar.js
+  - label: Load-40TPS
+    txNumber: 800
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 40
+    workload:
+      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;createCar.js
+  - label: Load-60TPS
+    txNumber: 1200
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 60
+    workload:
+      module: benchmarks&#x2F;samples&#x2F;fabric&#x2F;fabcar&#x2F;createCar.js
 </pre>
                 <h3>SUT</h3>
                 <pre id="sutdetails">not provided</pre>

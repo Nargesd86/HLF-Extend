@@ -1,46 +1,124 @@
 test:
+  name: IoT Latency vs Throughput - Fig. 9 Enhanced Steps
+  description: Evaluate latency increase with fine-grained TPS steps for curved performance plot
   workers:
     number: 5
+
   rounds:
-    - label: Create a car.
-      # 5000 transactions should create around 1000 cars per worker but not guaranteed
-      # so need to set asset limits to less than 1000 for the other tests
-      txNumber: 5000
+    - label: Load-10TPS
+      txNumber: 500
       rateControl:
-          type: fixed-load
-          opts:
-            transactionLoad: 5
+        type: fixed-rate
+        opts:
+          tps: 10
       workload:
         module: benchmarks/samples/fabric/fabcar/createCar.js
-    - label: Change car owner.
-      txDuration: 30
+
+    - label: Load-30TPS
+      txNumber: 900
       rateControl:
-          type: fixed-load
-          opts:
-            transactionLoad: 5
+        type: fixed-rate
+        opts:
+          tps: 30
       workload:
-        module: benchmarks/samples/fabric/fabcar/changeCarOwner.js
-        arguments:
-          assets: 500
-    - label: Query all cars.
-      txDuration: 30
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-50TPS
+      txNumber: 1000
       rateControl:
-          type: fixed-load
-          opts:
-            transactionLoad: 5
+        type: fixed-rate
+        opts:
+          tps: 50
       workload:
-        module: benchmarks/samples/fabric/fabcar/queryAllCars.js
-        arguments:
-          assets: 500
-          startKey: '1'
-          endKey: '50'
-    - label: Query a car.
-      txDuration: 30
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-75TPS
+      txNumber: 1500
       rateControl:
-          type: fixed-load
-          opts:
-            transactionLoad: 5
+        type: fixed-rate
+        opts:
+          tps: 75
       workload:
-        module: benchmarks/samples/fabric/fabcar/queryCar.js
-        arguments:
-          assets: 500
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-100TPS
+      txNumber: 2000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-125TPS
+      txNumber: 2500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 125
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-150TPS
+      txNumber: 3000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 150
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-175TPS
+      txNumber: 3500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 175
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-200TPS
+      txNumber: 4000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-225TPS
+      txNumber: 4500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 225
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-250TPS
+      txNumber: 5000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 250
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-275TPS
+      txNumber: 5500
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 275
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
+    - label: Load-300TPS
+      txNumber: 6000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 300
+      workload:
+        module: benchmarks/samples/fabric/fabcar/createCar.js
+
